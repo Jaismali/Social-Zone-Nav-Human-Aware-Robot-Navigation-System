@@ -1,0 +1,15 @@
+{
+    "num_trajectories": 3989,
+    "obs_len": 8,
+    "pred_len": 12,
+    "trajectory_shape": [
+        3989,
+        8,
+        2
+    ],
+    "labels_shape": [
+        3989,
+        12,
+        2
+    ]
+}

@@ -1,0 +1,39 @@
+@echo off
+echo ========================================
+echo Running 5 Social-Zone Nav experiments
+echo ========================================
+echo.
+
+set /a count=1
+
+:loop
+if %count% gtr 5 goto done
+
+echo.
+echo [Run %count%/5] Starting experiment...
+echo ----------------------------------------
+
+python main.py --neural
+
+if exist experiment_results.npy (
+    ren experiment_results.npy experiment_results_run%count%.npy
+    echo Saved as experiment_results_run%count%.npy
+) else (
+    echo ERROR: experiment_results.npy not found!
+    pause
+    exit
+)
+
+set /a count+=1
+goto loop
+
+:done
+echo.
+echo ========================================
+echo All 5 runs complete!
+echo ========================================
+echo.
+dir experiment_results_run*.npy
+echo.
+echo Now run the averaging script to see results.
+pause

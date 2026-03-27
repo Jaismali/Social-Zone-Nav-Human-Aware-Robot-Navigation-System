@@ -1,0 +1,19 @@
+# Python 
+venv/ 
+__pycache__/ 
+*.pyc 
+# ROS 
+build/ 
+devel/ 
+install/ 
+# Logs 
+logs/ 
+*.log 
+# Models 
+*.pt 
+*.pth 
+# Data 
+data/ 
+datasets/ 
+# Env 
+.env 
